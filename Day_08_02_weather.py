@@ -34,8 +34,14 @@ locations=re.findall(r'<location wl_ver="3">(.+?)</location>', received.text, re
 # <reliability/>
 # <rnSt>30</rnSt>
 # </data>
-dates=re.findall(r'<data>(.+?)<data>', locations, re.DOTALL)
-for data in dates:
-    # print(loc)
-    test=re.findall(r'<data>[>](.+?)[<]', data, re.DOTALL)
-    print(test)
+for loc in locations:
+    dates = re.findall(r'<data>(.+?)</data>', loc, re.DOTALL)
+    for data in dates:
+        mode=re.findall(r'<mode>(.+?)</mode>', data)
+        tmEf=re.findall(r'<tmEf>(.+?)</tmEf>', data)
+        wf=re.findall(r'<wf>(.+?)</wf>', data)
+        tmn=re.findall(r'<tmn>(.+?)</tmn>', data)
+        tmx=re.findall(r'<tmx>(.+?)</tmx>', data)
+        rnSt=re.findall(r'<rnSt>(.+?)</rnSt>', data)
+        print(mode[0], tmEf[0], wf[0], tmn[0], tmx[0], rnSt[0])
+
