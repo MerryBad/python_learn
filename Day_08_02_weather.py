@@ -44,4 +44,3 @@ for loc in locations:
         tmx=re.findall(r'<tmx>(.+?)</tmx>', data)
         rnSt=re.findall(r'<rnSt>(.+?)</rnSt>', data)
         print(mode[0], tmEf[0], wf[0], tmn[0], tmx[0], rnSt[0])
-
