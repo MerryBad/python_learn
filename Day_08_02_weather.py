@@ -61,8 +61,9 @@ locations=re.findall(r'<location wl_ver="3">(.+?)</location>', received.text, re
 #         # result=re.findall(r'<mode>(.+?)</mode>.+<tmEf>(.+?)</tmEf>.+<wf>(.+?)</wf>.+<tmn>(.+?)</tmn>.+<tmx>(.+?)</tmx>.+<rnSt>(.+?)</rnSt>', data, re.DOTALL)
 #         # mode, tmEf, wf, tmn, tmx, rnSt = result[0]
 #         result=re.findall(r'<.+>(.+?)</.+>', data)
-#         mode, tmEf, wf, tmn, tmx, rnSt = result
+#         mode, tmEf, wf, tmn, tmx, rnSt = result               # unpacking
 #         print(prov, city, mode, tmEf, wf, tmn, tmx, rnSt)
+#         print(prov, city, *result)                            # packing
 
 # prov와 city를 한번에 찾기
 # for loc in locations:
