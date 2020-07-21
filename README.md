@@ -16,3 +16,4 @@
 07/17 : 함수, 람다식, splite(나중에), class, Flask\
 -------------------데이터 분석 및 시각화-------------------\
 07/20 : numpy, matploatlib, scikit-learn\
+07/21 : numpy, matploatlib, svm\
