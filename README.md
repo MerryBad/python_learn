@@ -17,3 +17,4 @@
 -------------------데이터 분석 및 시각화-------------------\
 07/20 : numpy, matploatlib, scikit-learn\
 07/21 : numpy, matploatlib, svm\
+07/22 : pandas, preprocessing, colormap\
