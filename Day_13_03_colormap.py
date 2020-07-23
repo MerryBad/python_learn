@@ -100,7 +100,7 @@ def colormap_6():
     df=flight.pivot('month', 'year', 'passengers')
     print(df, end='\n\n')
     #
-    # plt.pcolor(df)
+    # plt.pcolor(df.values)
     # plt.title('flights heatmap')
     # # plt.xticks(range(12), df.index)
     # plt.xticks(0.5+np.arange(0,12,2), df.columns[::2])

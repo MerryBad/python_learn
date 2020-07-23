@@ -113,16 +113,25 @@ import numpy as np
 # print(h[[0,1]])
 # print(h[[0,1,1,0]])
 
-# 단위행렬(대각선이 1로 채워진 행렬)
-# 5행 5열의 단위행렬을 만들기
+# # 단위행렬(대각선이 1로 채워진 행렬)
+# # 5행 5열의 단위행렬을 만들기
+#
+# print(np.eye(5, dtype=np.int32))
+#
+# r=np.zeros([5,5], dtype=np.int32)
+# # index=[0,1,2,3,4]
+# # r[(index,index)]=1
+# r[range(5),range(5)]=1
+# print(r)
+#
+# for i in range(len(r)):
+#     r[i,i]=1
 
-print(np.eye(5, dtype=np.int32))
+t = np.int32([1,3,4,9])
+bools = [True, False, True, False]
 
-r=np.zeros([5,5], dtype=np.int32)
-# index=[0,1,2,3,4]
-# r[(index,index)]=1
-r[range(5),range(5)]=1
-print(r)
+print(t[bools])
 
-for i in range(len(r)):
-    r[i,i]=1
+for i in range(len(bools)):
+    if bools[i]:
+        print(t[i])

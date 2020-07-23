@@ -1,4 +1,4 @@
-from sklearn import preprocessing
+from sklearn import preprocessing, impute
 import numpy as np
 def add_dummy_feature():
     a=[[1,3],[5,7]]
@@ -19,9 +19,19 @@ def binarizer():
     print(bin.transform(a))
 
 def imputer():
+    # (1 + 7) / 2 = 4
+    # (2 + 4 + 9) / 3 = 5
     x = [[1,2],
          [np.nan, 4], # nan= not a number
          [7,9]]
+    imp=impute.SimpleImputer(strategy='mean')
+    imp.fit(x)
+    print(imp.transform(x))
+
+    x2 = [[1, np.nan],
+         [np.nan, np.nan],  # nan= not a number
+         [np.nan, 9]]
+    print(imp.transform(x2))
 
 def label_binarizer():
     x = [1,2,6,2,4]
@@ -91,8 +101,8 @@ def standard_scale():
 
 #add_dummy_feature()
 # binarizer()
-# imputer()
+imputer()
 # label_binarizer()
 # label_encoder()
 # minmax_scale()
-standard_scale()
+# standard_scale()

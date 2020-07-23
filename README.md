@@ -18,3 +18,4 @@
 07/20 : numpy, matploatlib, scikit-learn\
 07/21 : numpy, matploatlib, svm\
 07/22 : pandas, preprocessing, colormap\
+07/23 : pandas, scikit-learn\
