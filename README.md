@@ -13,9 +13,11 @@
 07/14 : comprehension, json, re 사용법\
 07/15 : 파일, 기상청 데이터로 파싱\
 07/16 : 파싱 2회차, csv 파일 다루기, openAPI 가져오기\
-07/17 : 함수, 람다식, splite(나중에), class, Flask\
+07/17 : 함수, 람다식, SQLite3(나중에), class, Flask\
 -------------------데이터 분석 및 시각화-------------------\
 07/20 : numpy, matploatlib, scikit-learn\
 07/21 : numpy, matploatlib, svm\
 07/22 : pandas, preprocessing, colormap\
 07/23 : pandas, scikit-learn\
+07/24 : SQLite3, 웹 크롤링, leaf\
+--------------------------------------------------------\
