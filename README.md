@@ -20,4 +20,6 @@
 07/22 : pandas, preprocessing, colormap\
 07/23 : pandas, scikit-learn\
 07/24 : SQLite3, 웹 크롤링, leaf\
---------------------------------------------------------\
+------------------텐서플로우 딥러닝-------------------------\
+07/28 : tensorflow,gradient descent\
+07/29 : 
