@@ -5,7 +5,7 @@ def cost(x, y, w):
     c=0
     for i in range(len(x)):
         hx= w * x[i]
-        loss = (hx-y[i])**2
+        loss = (hx-y[i])**2 # mse
         c += loss
     return c/len(x)
 
@@ -59,6 +59,12 @@ def show_gradient():
     # w를 1.0으로 만드는 코드를 찾기
     w=5
 
+    for i in range(10):
+        c=cost(x,y,w=w)  # 코스트 = 정답과 측정값의 차이
+        g=gradient_descent(x,y,w=w)
+        w-= 0.1* g
+        print(i, c)
+
     # 반복횟수 늘리기
     # for i in range(1000):
     #     g = gradient_descent(x, y, w=w)
@@ -66,9 +72,13 @@ def show_gradient():
     #     print(i, w)
 
     # 값 바꾸기
-    for i in range(10):
-        g=gradient_descent(x,y,w=w)
-        w-= 0.195* g
-        print(i, w)
+    # for i in range(10):
+    #     c=cost(x,y,w=w)
+    #     g=gradient_descent(x,y,w=w)
+    #     w-= 0.195* g
+    #     print(i, c)
 
+    # x가 5와 7일 때의 결과를 출력
+    print('5 : ', w*5)
+    print('7 : ', w*7)
 show_gradient()
