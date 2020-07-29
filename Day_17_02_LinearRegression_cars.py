@@ -7,10 +7,12 @@ import matplotlib.pyplot as plt
 # 1. 팬더스로 파일 읽기
 car = pd.read_csv('data\cars.csv')
 # print(car)
+# car.info()
 
 # 2. x와 y 데이터 만들기
 # print(car.values)
-
+# x=np.int32(car.speed.values)
+# y=np.int32(car.dist.values)
 x=car.values[:,1:2] #speed
 y=car.values[:,2:]  #dist
 
@@ -48,11 +50,13 @@ print('7, 20 : ',sess.run(hx,feed_dict={ph_x:[7,20]}))
 
 # 차트그리기
 plt.subplot(2, 2, 1)
-plt.plot(x, y, 'r')
+plt.plot(x, y, 'ro')
 plt.title("speed, dist")
+
 plt.subplot(2, 2, 2)
 plt.plot(range(50),sess.run(hx,{ph_x:range(50)}))
 plt.title("predict ~50")
+
 plt.subplot(2, 2, 3)
 plt.title("loss ~1000")
 plt.plot(range(1000), loss_print, 'b')
