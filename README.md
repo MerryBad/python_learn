@@ -22,4 +22,5 @@
 07/24 : SQLite3, 웹 크롤링, leaf\
 ------------------텐서플로우 딥러닝-------------------------\
 07/28 : tensorflow,gradient descent\
-07/29 : multipleRegression
+07/29 : multipleRegression\
+07/30 : multipleRegression, sigmoid\
