@@ -1,6 +1,7 @@
 import tensorflow as tf
 import numpy as np
 from sklearn import datasets, model_selection
+import matplotlib.pyplot as plt
 #
 # 결과가 2개만 있을때 ( 0, 1 같이) 사용
 
@@ -81,6 +82,7 @@ def logistic_regression():
 # 70%학습 30%테스트
 def logistic_regression_iris():
     x, y=datasets.load_iris(return_X_y=True)
+    y=y.reshape(-1,1)
     # print(x.shape, y.shape) # (150, 4) (150,)
     x=np.float32(x[:100])
     y=np.float32(y[:100])
@@ -92,8 +94,10 @@ def logistic_regression_iris():
     x_train, x_test, y_train, y_test = data
 
     w = tf.Variable(tf.random_uniform([4, 1]))
+    b = tf.Variable(tf.random_uniform([1]))
+
     # (100, 1) = (100, 4) @ (4, 1)
-    z = tf.matmul(ph_x, w)
+    z = tf.matmul(ph_x, w) + b
     hx = tf.sigmoid(z)  # 1 / (1 + tf.exp(-z))
 
     # loss_i = y * -tf.log(hx) + (1-y) * -tf.log(1-hx)
@@ -114,13 +118,18 @@ def logistic_regression_iris():
     preds = preds.reshape(-1)
     print(preds)
 
-    bools = (preds > 0.5)
+    bools = np.int32(preds > 0.5)
     print(bools)
 
-    y_bools = y_test.reshape(-1)
+    y_bools = np.int32(y_test.reshape(-1))
     print(y_bools)
 
     print('acc :', np.mean(bools == y_bools))
     sess.close()
 
+    plt.scatter(x[:,0],x[:,2], c=y.reshape(-1))
+    plt.show()
+
+
+# logistic_regression()
 logistic_regression_iris()

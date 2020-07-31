@@ -21,6 +21,8 @@
 07/23 : pandas, scikit-learn\
 07/24 : SQLite3, 웹 크롤링, leaf\
 ------------------텐서플로우 딥러닝-------------------------\
+07/27 : cost, gradient\
 07/28 : tensorflow,gradient descent\
 07/29 : multipleRegression\
 07/30 : multipleRegression, sigmoid, logisticRegression\
+07/31 : LogisticRegression, Softmax
