@@ -25,4 +25,6 @@
 07/28 : tensorflow,gradient descent\
 07/29 : multipleRegression\
 07/30 : multipleRegression, sigmoid, logisticRegression\
-07/31 : LogisticRegression, Softmax
+07/31 : LogisticRegression, Softmax\
+--------------------------------------------------------------\
+08/03 : XOR, Cost, Gradientbias\

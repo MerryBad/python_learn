@@ -101,8 +101,8 @@ def standard_scale():
 
 #add_dummy_feature()
 # binarizer()
-imputer()
+# imputer()
 # label_binarizer()
-# label_encoder()
+label_encoder()
 # minmax_scale()
 # standard_scale()
