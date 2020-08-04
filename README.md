@@ -28,3 +28,4 @@
 07/31 : LogisticRegression, Softmax\
 --------------------------------------------------------------\
 08/03 : XOR, Cost, Gradientbias\
+08/04 : stochastic, MultiLayers\
