@@ -29,3 +29,4 @@
 --------------------------------------------------------------\
 08/03 : XOR, Cost, Gradientbias\
 08/04 : stochastic, MultiLayers\
+08/05 : MultiLayers, 
