@@ -79,7 +79,7 @@ def mini_batch(x,y):
     epochs = 10
     batch_size = 5
 
-    for i in range(m):
+    for i in range(epochs):
         n_iteration = m // batch_size
         for j in range(n_iteration):
             n1 = j * batch_size
@@ -97,7 +97,7 @@ def mini_batch_random(x,y):
     epochs = 10
     batch_size = 5
 
-    for i in range(m):
+    for i in range(epochs):
         n_iteration = m // batch_size
 
         for j in range(n_iteration):
