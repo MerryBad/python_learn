@@ -86,7 +86,6 @@ def Model_BankMarketing(x_train, y_train, x_test, y_test):
     r4 = tf.nn.relu(z4)
 
     z5 = tf.matmul(r4, w5) + b5
-    r5 = tf.nn.relu(z5)
 
     hx = tf.sigmoid(z5)
 
@@ -125,7 +124,7 @@ def Model_BankMarketing(x_train, y_train, x_test, y_test):
 # x_test, y_test = get_data_sparse('data/bank.csv')
 
 x_train, y_train = get_data_dense('data/bank-full.csv')
-x_test, y_test = get_data_dense('data/bank.csv')
+x_test, y_test   = get_data_dense('data/bank.csv')
 
 scaler = preprocessing.StandardScaler()
 scaler.fit(x_train)
