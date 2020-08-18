@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import tensorflow as tf
-from sklearn import preprocessing, model_selection
+from sklearn import preprocessing, model_selection, impute
 
 def get_data():
     names = ['age',
@@ -33,6 +33,9 @@ def get_data():
     data['native_country']=enc.fit_transform((data['native_country']))
     data['y']=enc.fit_transform((data['y']))
     x=data.values[:,:-1]
+    imp = impute.SimpleImputer(missing_values='?', strategy='most_frequent')
+    imp.fit(x)
+
     y=np.float32(data.values[:,-1:])
     x=preprocessing.minmax_scale(x)
     return model_selection.train_test_split(x,y,train_size=0.7)
