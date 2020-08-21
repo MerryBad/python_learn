@@ -225,7 +225,7 @@ def Model_titanic(x_train, y_train, x_valid, x_test):
     ph_x = tf.placeholder(tf.float32)
     ph_y = tf.placeholder(tf.float32)
     ph_d = tf.placeholder(tf.float32)
-
+    ph_l = tf.placeholder(tf.float32)
     z, hx = multi_layer(ph_x, ph_d, layers=[11,5,1], input_size=x_train.shape[1])
 
     loss_i = tf.nn.sigmoid_cross_entropy_with_logits(
@@ -239,7 +239,7 @@ def Model_titanic(x_train, y_train, x_valid, x_test):
     sess.run(tf.global_variables_initializer())
 
     epochs = 101
-    batch_size = 16
+    batch_size = 32
     n_iteration = len(x_train) // batch_size
 
     indices = np.arange(len(x_train))
@@ -285,16 +285,24 @@ x_train, x_valid, y_train, y_valid = model_selection.train_test_split(x,y, train
 
 preds_valid, preds_test = Model_titanic(x_train, y_train, x_valid, x_test)
 # show_accuracy(preds_valid, y_valid.reshape(-1))
-
-results_valid = np.zeros(len(x_valid))
-results_test = np.zeros(len(x_test))
-for i in range(5):
+n_ensembles = 7
+results_test_1 = np.zeros(len(x_test))
+for i in range(n_ensembles):
     with tf.variable_scope(str(i)):
         preds_valid, preds_test = Model_titanic(x_train, y_train, x_valid, x_test)
-        show_accuracy(results_valid, y_valid.reshape(-1))
-        results_valid += preds_valid
-        results_test += preds_test
-print('-'*30)
-show_accuracy(results_valid/7, y_valid.reshape(-1))
+        show_accuracy(preds_valid, y_valid.reshape(-1))
 
-make_submission('kaggle/titanic_submission.csv', ids, results_test/7)
+        results_test_1 += preds_test
+
+results_test_2 = np.zeros(len(x_test))
+for i in range(n_ensembles):
+    with tf.variable_scope(str(i)):
+        _, preds_test = Model_titanic(x, y, x_valid, x_test)
+        results_test_2 += preds_test
+
+
+print('-'*30)
+results_test_1/=n_ensembles
+results_test_2/=n_ensembles
+make_submission('kaggle/titanic_submission_1.csv', ids, results_test_1)
+make_submission('kaggle/titanic_submission_2.csv', ids, results_test_2)
